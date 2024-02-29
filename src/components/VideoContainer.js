@@ -1,0 +1,24 @@
+import React from "react";
+
+const VideoContainer = ({ video }) => {
+
+  const { snippet, statistics } = video;
+
+  const { thumbnails, title, channelTitle } = snippet;
+
+  const { likeCount, viewCount } = statistics;
+
+  return <div>
+    <div className="px-2 w-72 ">
+      <img className="rounded-lg w-full px-2" src={thumbnails.medium.url} alt="Thumnail"/>
+      <ul>
+        <li><h1 className="font-bold py-2">{title}</h1></li>
+        <li className="">{channelTitle}</li>
+        <li>{likeCount} likes - {viewCount} views</li>
+      </ul>
+      
+    </div>
+  </div>;
+};
+
+export default VideoContainer;

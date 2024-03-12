@@ -1,5 +1,10 @@
 import React, { useEffect } from "react";
-import { MENU_IMG, USER_ICON, YOUTUBE_IMG } from "../utils/constants";
+import {
+  MENU_IMG,
+  SUGGESTIONS_API,
+  USER_ICON,
+  YOUTUBE_IMG,
+} from "../utils/constants";
 import { useDispatch, useSelector } from "react-redux";
 import { setFocus, setSearchText, sideBarToggler } from "../utils/toggleSlice";
 import { addCacheResults, addSearchResults } from "../utils/youtubeSlice";
@@ -21,10 +26,7 @@ const Header = () => {
   };
 
   const fetchSearchData = async () => {
-    const data = await fetch(
-      "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=" +
-        searchQuery
-    );
+    const data = await fetch(SUGGESTIONS_API + searchQuery);
     const json = await data.json();
     dispatch(addSearchResults(json[1]));
     dispatch(
@@ -80,7 +82,7 @@ const Header = () => {
         </div>
         {setFocu && (
           <div>
-            <ul className="bg-white absolute w-[32rem] ml-56 rounded-lg px-2 py-2 shadow-lg">
+            <ul className="bg-white absolute w-[32rem] ml-56 rounded-lg px-2 py-2">
               {searchResults.map((s) => (
                 <li key={s} className="py-1 px-2 hover:bg-gray-100 ">
                   🔎 {s}

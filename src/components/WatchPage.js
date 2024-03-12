@@ -8,8 +8,6 @@ const WatchPage = () => {
   const dispatch = useDispatch();
 
   dispatch(watchToggler());
-
-  console.log(videoId.id);
   return (
     <div className=" m-4 p-4 rounded-lg">
       <iframe

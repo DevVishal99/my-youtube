@@ -8,7 +8,7 @@ const SideBar = () => {
   if (!sideBarStatus) return null;
 
   return (
-    <div className="w-56 shadow-xl h-screen">
+    <div className="w-72 shadow-xl h-screen">
       <ul className="m-2">
         <Link to={"/"}>
         <li className="font-bold my-1">Home</li>

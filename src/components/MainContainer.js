@@ -13,8 +13,8 @@ const MainContainer = () => {
         <ButtonList />
         <div className="flex flex-wrap m-2 ">
           {videos.map((video) => (
-            <Link to={"/watch/"+video.id}>
-            <VideoContainer key={video.id} video={video} />
+            <Link key={video.id} to={"/watch/"+video.id}>
+            <VideoContainer video={video} />
             </Link>
           ))}
         </div>

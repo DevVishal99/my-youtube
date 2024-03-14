@@ -50,7 +50,7 @@ const Header = () => {
   }, [searchQuery]);
 
   return (
-    <div className="flex justify-between shadow-xl h-20 align-middle">
+    <div className="flex justify-between shadow-xl h-20 align-middle w-screen">
       <div className="flex">
         <img
           className="h-12 w-5 mx-2 my-3 cursor-pointer"

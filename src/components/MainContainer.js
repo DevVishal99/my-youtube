@@ -9,9 +9,9 @@ const MainContainer = () => {
   if (!videos) return null;
   return (
     <>
-      <div className="">
+      <div className="w-screen">
         <ButtonList />
-        <div className="flex flex-wrap m-2 ">
+        <div className="flex flex-wrap ">
           {videos.map((video) => (
             <Link key={video.id} to={"/watch/"+video.id}>
             <VideoContainer video={video} />

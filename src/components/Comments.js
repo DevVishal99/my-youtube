@@ -2,7 +2,7 @@ import React from "react";
 import { USER_ICON } from "../utils/constants";
 
 const Comments = ({data}) => {
-    const {name , text, replies} = data;
+    const {name , text} = data;
 
 
   return <div className="flex my-2 py-2 bg-gray-200 rounded-lg">

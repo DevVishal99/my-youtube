@@ -4,10 +4,10 @@ import Comments from "./Comments";
 const CommentsList = ({ comments }) => {
   return (
     <div>
-      {comments.map((comment) => (
+      {comments.map((comment, index) => (
         <>
           <div>
-            <Comments data={comment} />
+            <Comments key={index} data={comment} />
           </div>
           <div className="px-2 mx-2 border border-l-black">
             <CommentsList comments={comment.replies}/>

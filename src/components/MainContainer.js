@@ -11,7 +11,7 @@ const MainContainer = () => {
     <>
       <div className="w-screen">
         <ButtonList />
-        <div className="flex flex-wrap ">
+        <div className="flex flex-wrap">
           {videos.map((video) => (
             <Link key={video.id} to={"/watch/"+video.id}>
             <VideoContainer video={video} />

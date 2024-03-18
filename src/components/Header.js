@@ -50,7 +50,7 @@ const Header = () => {
   }, [searchQuery]);
 
   return (
-    <div className="flex justify-between shadow-xl h-20 align-middle w-screen">
+    <div className="flex justify-between shadow-xl h-20 align-middle md:w-screen w-screen">
       <div className="flex">
         <img
           className="h-12 w-5 mx-2 my-3 cursor-pointer"
@@ -94,7 +94,7 @@ const Header = () => {
       </div>
 
       <div>
-        <img className="h-12 m-3" alt="userIcom" src={USER_ICON} />
+        <img className="h-12 m-3 md:inline hidden" alt="userIcom" src={USER_ICON} />
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ const CommentsContainer = () => {
 
 
   return (
-    <div className="px-4 mx-4">
+    <div className="md:px-2 px-0 md:mx-2 mx-0">
       <h1 className="font-bold text-xl"> Comments :</h1>
       <CommentsList comments={commentsData} />
     </div>

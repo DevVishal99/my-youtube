@@ -12,24 +12,24 @@ const WatchPage = () => {
   dispatch(watchToggler());
   return (
     <div className="flex flex-col w-full">
-    <div className=" m-4 p-4 rounded-lg flex w-full">
-      <div>
-      <iframe
-        width="1000"
-        height="500"
-        src={"https://www.youtube.com/embed/" + videoId.id + "?autoplay=1"}
-        title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullScreen
-      ></iframe>
+      <div className="rounded-lg flex flex-col md:flex md:flex-row ">
+        <div className="md:w-9/12 w-full aspect-video px-2 md:px-0">
+          <iframe
+          className= "w-full h-[300px] sm:h-[450px] md:h-[600px] lg:h-[450px] xl:h-[600px] py-4 md:py-2"
+            width="300"
+            height="300"
+            src={"https://www.youtube.com/embed/" + videoId.id + "?autoplay=1"}
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
+        </div>
+        <div className="md:w-3/12 pr-2 md:pr-0 md:py-2 h-[600px] md:h-[600px]">
+          <LiveChat />
+        </div>
       </div>
-      <div className="w-full">
-      <LiveChat/>
-      </div>
-      
-    </div>
-    <CommentsContainer/>
+      <CommentsContainer />
     </div>
   );
 };

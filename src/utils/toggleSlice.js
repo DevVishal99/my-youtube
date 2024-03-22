@@ -6,6 +6,7 @@ const toggleSlice = createSlice({
     sideBarToggle: true,
     searchText: "",
     focus: true,
+    dark: false,
   },
   reducers: {
     sideBarToggler: (state, action) => {
@@ -20,9 +21,12 @@ const toggleSlice = createSlice({
     setFocus: (state, action) => {
       state.focus = action.payload;
     },
+    setDark: (state) => {
+      state.dark = !state.dark;
+    },
   },
 });
 
 export default toggleSlice.reducer;
-export const { sideBarToggler, watchToggler, setSearchText, setFocus } =
+export const { sideBarToggler, watchToggler, setSearchText, setFocus, setDark } =
   toggleSlice.actions;

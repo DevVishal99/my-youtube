@@ -6,7 +6,7 @@ import {
   YOUTUBE_IMG,
 } from "../utils/constants";
 import { useDispatch, useSelector } from "react-redux";
-import { setFocus, setSearchText, sideBarToggler } from "../utils/toggleSlice";
+import { setDark, setFocus, setSearchText, sideBarToggler } from "../utils/toggleSlice";
 import { addCacheResults, addSearchResults } from "../utils/youtubeSlice";
 
 const Header = () => {
@@ -15,6 +15,9 @@ const Header = () => {
   const searchResults = useSelector((store) => store.youtube.searchResults);
   const setFocu = useSelector((store) => store.toggle.focus);
   const searchCache = useSelector((store) => store.youtube.cacheResults);
+  const isDark = useSelector((store) => store.toggle.dark)
+
+  console.log(isDark);
 
   const handleSideBar = () => {
     dispatch(sideBarToggler());
@@ -50,7 +53,7 @@ const Header = () => {
   }, [searchQuery]);
 
   return (
-    <div className="flex justify-between shadow-xl h-20 align-middle md:w-screen w-screen">
+    <div className="flex justify-between shadow-xl h-20 align-middle md:w-screen w-screen dark:bg-slate-800">
       <div className="flex">
         <img
           className="h-12 w-5 mx-2 my-3 cursor-pointer"
@@ -91,6 +94,9 @@ const Header = () => {
             </ul>
           </div>
         )}
+      </div>
+      <div className="my-5">
+        <input className="" type="checkBox" onClick={() => dispatch(setDark())}  />
       </div>
 
       <div>
